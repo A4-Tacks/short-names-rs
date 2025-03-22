@@ -1,0 +1,15 @@
+[package]
+name = "short-names"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["A4-Tacks <wdsjxhno1001@163.com>"]
+keywords = ["iterator", "option", "result"]
+categories = ["no-std", "no-std::no-alloc"]
+description = "Add very short names to some methods in the core"
+
+license = "MIT"
+repository = "https://github.com/A4-Tacks/short-names-rs"
+readme = "README.md"
+
+[dependencies]
