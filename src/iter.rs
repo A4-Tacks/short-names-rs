@@ -46,3 +46,11 @@ impl_shorts!(pub impl[Iter: Iterator] IteratorShorts: Iterator:Sized => "Iterato
     fn prod:product:"product"(self) -> P [P] where P: Product<Self::Item>;
     fn pcmp:partial_cmp:"partial_cmp"(self, other: I) -> Option<Ordering> [I] where I: IntoIterator, Self::Item: PartialOrd<I::Item>;
 });
+
+impl_shorts!(pub impl[Iter: DoubleEndedIterator] DoubleEndedIteratorShorts: DoubleEndedIterator:Sized => "DoubleEndedIterator": Iter
+{
+    fn nb:next_back:"next_back"(&mut self) -> Option<Self::Item>;
+    fn nthb:nth_back:"nth_back"(&mut self, n: usize) -> Option<Self::Item>;
+    fn rfi:rfind:"rfind"(&mut self, predicate: P) -> Option<Self::Item> [P] where P: FnMut(&Self::Item) -> bool;
+    fn rfo:rfold:"rfold"(self, init: B, f: F) -> B [B, F] where F: FnMut(B, Self::Item) -> B;
+});
