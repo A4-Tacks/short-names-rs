@@ -7,7 +7,7 @@ macro_rules! impl_shorts {
     => $dname:literal : $ty:ty
         $(where $($wty:ty : $wbf:path $(: $wbr:path)*),+ $(,)?)?
     {$(
-        fn $short:ident : $long:ident : $alias:literal
+        fn $short:ident : $long:ident
         ($($param:tt)*)
         $(-> $retty:ty)?
         $([$($mg:tt)*])?
@@ -19,7 +19,7 @@ macro_rules! impl_shorts {
                 #[doc = concat!(
                     "Map to [`", $dname, "::", stringify!($long), "`]",
                 )]
-                #[doc(alias = $alias)]
+                #[stringify_inner::sexpr_attr(doc(alias = #stringify($long)))]
                 fn $short
                 $(<$($mg)*>)?
                 ($($param)*) $(-> $retty)?

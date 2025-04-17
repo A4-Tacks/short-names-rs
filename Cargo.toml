@@ -1,6 +1,6 @@
 [package]
 name = "short-names"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 
 authors = ["A4-Tacks <wdsjxhno1001@163.com>"]
@@ -13,3 +13,4 @@ repository = "https://github.com/A4-Tacks/short-names-rs"
 readme = "README.md"
 
 [dependencies]
+stringify-inner = "0.1.0"
